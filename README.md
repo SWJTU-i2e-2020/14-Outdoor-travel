@@ -1,115 +1,478 @@
 # 户外旅行选题报告——蓝牙智能手表
 
 ## 项目名称和作者
-
-## 目录
-
-## 小组每个人的贡献
+通信五虎：高科曌、李鸿健、王春翔、罗鑫、王宇涛。
 
 ## 问题定义
-水稻是草本稻属的一种，也是稻属中作为粮食的最主要最悠久的一种。原产中国，七千年前长江流域就种植水稻，广义水稻区别于旱稻；狭义水稻指淡水稻，区别于海水稻等，按稻谷类型，水稻可以分为籼稻和粳稻、早稻和中晚稻，糯稻和非糯稻，还有其它分类，水稻一般栽培于水田，无土栽培的是水上稻。水稻一般没有一米高，2米左右的为新培育的巨型稻，我国科学家袁隆平对杂交水稻的研究做出了巨大贡献，被誉为"杂交水稻之父"，水稻所结子实即稻谷，稻谷脱去颖壳后称糙米，糙米碾去米糠层即可得到大米，世界上近一半人口，都以大米为食。水稻除可食用外，还可以酿酒、制糖做工业原料，稻壳、稻秆，可以作为饲料，我国水稻主产区主要是东北地区、长江流域、珠江流域，属于直接经济作物。还是世界上三分之一人类的主食。也是北方人民的主要有机食品。
-水位的管理在整个生产过程中最为重要,应根据水稻不同生长期和鳖、虾、鱼对水位的要求,控制好稻田水位。3月份,稻田水位控制在30厘米左右。4月中旬以后,水温稳定在20℃C以上时,应将水位逐渐提高至60厘米以上,这样有利于小龙虾的生长。6-9月份根据水稻不同生长期对水位的要求,控制好稻田水位。6月份插秧后,前期做到薄水返青、浅水分渠、够苗晒田;晒田复水后保持20厘米水层;高温期要求适当提高水位,保持田面水位20-25厘米。小龙虾越冬前(即10-11月份)的稻田水位应控制在30厘米左右,这样可使稻莞露出水面10厘米左右,既可使部分稻苑再生,又可避免因稻苑全部淹没水下,导致稻田水质过肥缺氧,而影响小龙虾的生长。12月至翌年2月份小龙虾在越冬期间,应提高稻田水位,控制在60厘米以上。所以我们想要设计一个微系统来监测水位。
+第一，作为可穿戴计算设备的手表，自然要具备自主计算能力，所以智能手表应该有自己的独立数据处理能力。从现在的智能手表市面上看已经有厂家考虑到了这一点，盛大果壳的Geak Watch是以搭载完整智能系统为卖点的。而从索尼刚刚发布的Samrt Watch 2来看，由于索尼新发布的旗舰手机Xperia Z Ultra XL39h屏幕较大已经不太适合长时间手持使用，所以索尼不失时机的发布了一款智能手表，而它的功能更多的是作为智能机的配件使用，作为手机的第二块屏幕。
+第二，智能手表除了拥有独立计算能力之外，还要拥有协同工作能力。所以智能手表既可以作为一个终端使用，可以和其他终端协同工作，正是有了这些协同工作要求，我们对于智能手表的数据传输就有了要求。作为现在最时髦的数据传输方式有NFC和蓝牙以及用于连接外部设备的ATN+传输标准。蓝牙4.0从有效距离和功耗上都超过了前面的几代标准，所以智能手表应该具备至少蓝牙4.0的数据传输标准。
+现在市面上也有很多的智能穿戴设备出现，智能手环作为一个新兴产品受到人们的关注。但是纵观整个智能手环界，高级的已经具备智能手表的功能，低端的就只有健康管理这样的功能。所以从科技融合趋势来说，智能手表完全可以整合智能手环的功能，具备健康管理和环境感知。
+第三，智能手表作为终端产品，它应当作为我们感知周围环境的模块。一款智能手表应该内置多种常规传感器，来提醒使用者环境和身体的变化。对于现阶段能够继承的传感器包括：环境光、地磁、温度、气压、高度、陀螺仪和加速计以及心率传感器。这些内置传感器也将作为智能手表独立计算能力的一部分，可以脱离手机和网络独立为用户提供数据信息，这也是对智能手表信息稳定性的一种保证，这样即便脱离手机的辅助依然能作为一款智能穿戴设备使用。
 
 ## 问题的背景：
-
-自古以来我国就是农业大国，种植作物，种植类型，种植方式数不胜数。其中种植面积最大的就是水稻。
-
-智慧农业 ：将物联网技术运用到传统农业中去，运用传感器和软件通过移动平台或者电脑平台对农业生产进行控制，使传统农业更具有“智慧”。除了精准感知、控制与决策管理外，从广泛意义上讲，智慧农业还包括农业电子
-商务、食品溯源防伪、农业休闲旅游、农业信息服务等方面的内容。
+随着移动技术的发展，许多传统的电子产品也开始增加移动方面的功能，比如过去只能用来看时间的手表，现今也可以通过智能手机或家庭网络与互联网相连，显示来电信息、Twitter和新闻feeds、天气信息等内容。
+这种新手表可被称作智能手表，某些已经上市销售，某些还处于样品测试阶段。这类产品主要是为消费者在不方便使用智能手机的情况下使用而设计的，比如正在骑自行车或手上提满了东西的时候。
 
 ## 需求介绍：
-经过我们小组对于市场的分析，对于农户的调查，得出对于设备有以下要求：
+经过我们小组对于市场的分析，得出对于设备有以下要求：
+(1)一款可以随身携带，并能显示当地气温、湿度、时间，连接手机显示通知数量，电池，WIFI等的蓝牙智能手表。方便快捷，更适合户外旅行。
+(2)需要在旅行途中得到当地气温、湿度的信息。需要快捷地查看时间以及手机电量等信息。需要便于携带。
+(3)基于Arduino所设计的便于户外旅行的蓝牙智能创客产品。
+(4) 能够实现温度、湿度监测功能，与手机连接并显示手机上的信息。总体要求：所有信息都能在显示屏上显示出来，利用不同按键切换不同的功能状态。
+(5)需要温度传感器、湿度传感器、液晶显示屏、蓝牙信号接收器、Arduino主板。环境要求：Arduino编程软件。
 
-1.希望能够检测出水位。
-
-2.希望能够通过明显的方式提示种植者当前水位情况。
-
-3.希望能够在提高水稻产量上起到指导性作用，而并非直接作用。
-
-4.希望能够包装完善，方便使用
-
-5.希望能够在保证安全性的情况下提高精度
 ## 概念设计
-1.可替换的概念
+（1）.通过蓝牙与WIFI模块，在连接上WIFI以后从互联网更新日期与时间并将其显示在液晶显示屏上。
 
-（1）.通过压强传感器，对水田底部的压强进行测量再通过计算机计算出不同压强对应的不同水位，再将计算值与标准值进行比较，将大小结果传输到LCD显示屏上。指示农户进行改变操作。
-
-（2）.通过温湿度传感器，对于临近水平面处进行测量，将测量值与标准值进行比较，若大于标准值则输出信号到LED灯和蜂鸣器上指示农户进行相应操作来改变现状。
-
-（3）.直接通过水位传感器，放置于标准水平面处将水位高度传输到芯片再与标准值进行比较，将大小结果传输到蜂鸣器和LED灯上，指示农户进行操作。
-2.概念评估
-	通过比较三种传感器的价格以及测量精度得到如下表格
-	
-	             价格          	测量精度
-		     
-压强传感器   	较贵（8元）		   较高
-
-温湿度传感器	       贵（8.8元）	 	   一般
-
-水位传感器	        便宜（5.9元）	   较高
-
-3.概念选择
-通过横向比较三种方案的成本与精度，由于我们是学生资金有限，决定还是选择成本最低的方案，而且第三种方案不仅成本最低而且精度也是最高的，当然从各个方面都应选择第三种方案，不仅如此，在实际代码编写中第三种方案也会更加简单，因为前两种方案还需将数据传入芯片并进行计算，第三种方案直接将结果传入并显示出来，综上第三种方案为最佳方案，也是我们选择的方案
+（2）.通过温湿度传感器，对于临近水平面处进行测量，并将测量值显示在液晶显示屏上。
 
 ## 详细设计：
+ESP-12N模块核心处理器采用高性价比芯片ESP8266EX。该芯片在较小尺寸封装中集成了业界领先的Tensilica’s L106 超低功耗32位微型MCU，带有16位精简模式，主频⽀持80 MHz和160 MHz，支持RTOS。ESP8266EX拥有完整的Wi-Fi网络功能，既能够独⽴应⽤，也可以作为从机搭载于其他主机MCU运⾏。当ESP8266EX独⽴应⽤时，能够直接从外接Flash中启动。内置的⾼速缓冲存储器有利于提⾼系统性能，并且优化存储系统。此外ESP8266EX只需通过SPI/SDIO 接⼝或I2C/UART⼝即可作为Wi-Fi适配器，应⽤到基于任何微控制器的设计中。
+ESP-F模块支持标准的IEEE802.11 b/g/n/e/i协议以及完整的TCP/IP协议栈。用户可以使用该模块为现有设备添加联网功能，也可以构建独立的网络控制器。
+ESP-F模块以最低成本提供最大实用性，为Wi-Fi功能嵌入其他系统提供无限可能。
+分类	项目	参数
+Wi-Fi	频率范围	2.4G~2.5G(2400M~2483.5M)
+	发射功率	802.11b: +20 dBm
+		802.11g: +17 dBm
+		802.11n: +14 dBm
+	接收灵敏度	802.11b: -91 dbm (11Mbps)
+		802.11g: -75 dbm（54Mbps）
+		802.11n: -72 dbm（MCS7）
+	天线	PCB板载天线
+硬件	CPU	Tensilica L106 32 bit微控制器
+	外设	UART/SDIO/SPI/I2C/I2S/IR遥控
+		GPIO/ADC/PWM/SPI/I2C/I2S
+	工作电压	2.5V ~ 3.6V
+	工作电流	平均电流：80 mA
+	工作温度	-40°C ~ 85°C
+	环境温度范围	-40°C ~ 125°C
+	封装大小	16mm x 24mm x 3mm
+软件	Wi-Fi 模式	Station/SoftAP/SoftAP+Station
+	安全机制	WPA/WPA2
+	加密类型	WEP/TKIP/AES
+	升级固件	UART Download/OTA（通过网络）
+	软件开发	Non-RTOS/RTOS/Arduino IDE等
+	网络协议	IPv4、TCP/UDP/HTTP/FTP/MQTT
+	用户配置	AT+ 指令集/云端服务器/ Android/iOS APP
 
 ## 性能评估
+目前能顺利地实现所有功能，能正常地显示温度、湿度、日期与时间，满足设计的需求。
 
-## 全生命周期成本和产品报价
+## 代码
+ifndef PDIR
 
-## 环境影响
+endif
+
+ifeq ($(COMPILE), xcc)
+    AR = xt-ar
+	CC = xt-xcc
+	NM = xt-nm
+	CPP = xt-xt++
+	OBJCOPY = xt-objcopy
+	OBJDUMP = xt-objdump
+else
+	AR = xtensa-lx106-elf-ar
+	CC = xtensa-lx106-elf-gcc
+	NM = xtensa-lx106-elf-nm
+	CPP = xtensa-lx106-elf-g++
+	OBJCOPY = xtensa-lx106-elf-objcopy
+	OBJDUMP = xtensa-lx106-elf-objdump
+endif
+
+BOOT?=none
+APP?=0
+SPI_SPEED?=40
+SPI_MODE?=QIO
+SPI_SIZE_MAP?=0
+
+ifeq ($(BOOT), new)
+    boot = new
+else
+    ifeq ($(BOOT), old)
+        boot = old
+    else
+        boot = none
+    endif
+endif
+
+ifeq ($(APP), 1)
+    app = 1
+else
+    ifeq ($(APP), 2)
+        app = 2
+    else
+        app = 0
+    endif
+endif
+
+ifeq ($(SPI_SPEED), 26.7)
+    freqdiv = 1
+else
+    ifeq ($(SPI_SPEED), 20)
+        freqdiv = 2
+    else
+        ifeq ($(SPI_SPEED), 80)
+            freqdiv = 15
+        else
+            freqdiv = 0
+        endif
+    endif
+endif
 
 
-本次我们制作的是一个水位检测自动抽水控制模块，以下的有关环境影响的分析分为三个部分，分别分析在制作中、投入生产后的影响以及所用主要元件在使用后的回收问题。
-在我们制作的过程时，我们将所购买的原材料进行焊接和组装，在此过程中，除了焊接时排放的烟气对环境有一定的影响和之外，我们使用的传统的制作方法对环境影响极小。若实现大工厂生产，我们可以考虑采用更高效的焊接方法，使用激光在一个封闭的仪器中进行焊接，这样既提高了生产效率，又通过封闭系统的烟气排放处理系统将产生的废气集中净化处理，可尽量减少对大气环境的影响。
-在投入生产后，我们计划将水位仪放入水稻田中进行使用，所以我们需要考虑的就是此模块对水和水稻的影响。在水下工作时，最容易发生便是水导致电路部分短路烧坏的情况，在使用过程中，我们只需要将传感器插入水稻田即可，在排除特大洪灾的情况下，传感器不会一般不会对水环境和水稻产生不良影响。 
-关于水位检测自动抽水控制模块中所使用的主要元件的妥善处理和回收问题，我们接下来对所使用到的元件进行逐一分析：
-1、首先我们使用的电源为5V的无汞电池，无任何排放，除了在电池耗尽之时，现国际上通行的废旧电池处理方式大致有三种：固化深埋、存放于废矿井、回收利用。但考虑到前两者的处理方法在一定程度上都会对大环境产生影响，我们可考虑将电池经过特殊处理来进行循环利用。另外，需要特别注意的是，由于电池中的汞对环境有害，为了保护环境，在购买时应选用商标上标有无汞字样的电池。
-2、对于所使用的控制主板PCB，在已经损坏的情况下，我们可以将PCB板进行脱漆、破碎和分选的工序，分选出来的物质，就可以再利用。其中，由于PCB表面涂有保护金属，脱漆剂有有机脱漆剂和碱性脱漆剂，有机脱漆剂毒性大，对人体和环境危害大，应使用氢氧化钠、缓蚀剂等加热溶解。关于继电器的处理方法，经过浏览器检索，可考虑将大量继电器交给专业的二手回收公司进行回收；
-3、在此模块中，我们使用到了四种电容，分别为：104瓷片电容、223独石电容、25V100UF电解电容和25V100UF电容，一种废旧电解电容器的处理与资源化回收方法,首先将废旧铝电解电容器置于热处理装置中进行非金属组分的热解，热解温度为400～600摄氏度，热解时间为0.5~2小时，热处理气氛为空气;然后对得到的热解残留物破碎至金属组分与非金属组分完全解离;之后用0.1～0.3mm的筛网对破碎后的混合颗粒进行筛分处理,分别得到非金属热解残渣粉末和铝铁金属混合颗粒;最后对铝铁金属混合颗粒进行磁选处理,将铁金属颗粒与铝金属颗粒完全分离回收。本发明实现铝和铁的高回收率、高纯度回收,且处理过程清洁,不向环境中排放任何有毒有害物质,具有操作简便、流程短、高效、环保、资源化程度高的特点,适合大规模工业化应用。各项目标均达国度规范。
+ifeq ($(SPI_MODE), QOUT)
+    mode = 1
+else
+    ifeq ($(SPI_MODE), DIO)
+        mode = 2
+    else
+        ifeq ($(SPI_MODE), DOUT)
+            mode = 3
+        else
+            mode = 0
+        endif
+    endif
+endif
 
-## 社会影响 
+addr = 0x01000
 
-近年社会影响评价得到了越来越广泛的重视，应重视社会影响分析在项目决策中的作用在工程项目的咨询工作中，在我们的项目中我们主要从以下三个方面评估项目对社会的影响：社会影响效果、社会适应性分析、社会风险以应对策略。
-### 一、社会影响效果
+ifeq ($(SPI_SIZE_MAP), 1)
+  size_map = 1
+  flash = 256
+else
+  ifeq ($(SPI_SIZE_MAP), 2)
+    size_map = 2
+    flash = 1024
+    ifeq ($(app), 2)
+      addr = 0x81000
+    endif
+  else
+    ifeq ($(SPI_SIZE_MAP), 3)
+      size_map = 3
+      flash = 2048
+      ifeq ($(app), 2)
+        addr = 0x81000
+      endif
+    else
+      ifeq ($(SPI_SIZE_MAP), 4)
+        size_map = 4
+        flash = 4096
+        ifeq ($(app), 2)
+          addr = 0x81000
+        endif
+      else
+        ifeq ($(SPI_SIZE_MAP), 5)
+          size_map = 5
+          flash = 2048
+          ifeq ($(app), 2)
+            addr = 0x101000
+          endif
+        else
+          ifeq ($(SPI_SIZE_MAP), 6)
+            size_map = 6
+            flash = 4096
+            ifeq ($(app), 2)
+              addr = 0x101000
+            endif
+          else
+            ifeq ($(SPI_SIZE_MAP), 8)
+              size_map = 8
+              flash = 8192
+              ifeq ($(app), 2)
+                addr = 0x101000
+              endif
+            else
+              ifeq ($(SPI_SIZE_MAP), 9)
+                size_map = 9
+                flash = 16384
+                ifeq ($(app), 2)
+                  addr = 0x101000
+                endif
+              else
+                size_map = 0
+                flash = 512
+                ifeq ($(app), 2)
+                addr = 0x41000
+                endif
+              endif
+            endif
+          endif
+        endif
+      endif
+    endif
+  endif
+endif
 
-  项目对所在地居民收入的影响：项目的使用可以提高当地居民水稻的生产效率，减少劳动成本，提高居民收入。
-  
-  项目对所在地居民就业的影响：该项目的投入使用分为两种情况：一是应用于大型种植工厂中，该项目的投入使用在一定程度上将会减少对工厂对工人的需求，也就是说，居民面临就业岗位将会变少，就业压力变大的情况。二是应用于小型传统的个体户种植中，该项目的使用将会为居民减少劳动时间，可以将多余的时间用于其他劳动生产中，使居民自己的就业情况改善。
+LD_FILE = $(LDDIR)/eagle.app.v6.ld
 
-  项目对所在地居民的生活水平和生活质量的影响：居民种植农作物的生产效率变高，居民平均收入将会提升.居民的生活水平和生活质量也会相应提升。
-  
-  项目对所在地不同利益相关者的影响：项目对所在地区教育、文化、卫生的影响：当地经济的提升将会带动当地教育的发展、文化、卫生的发展。
-  
-  项目对当地基础设施、社会服务容量的影响：经济发展带动当地基础设施的发展，当地社会服务容量加大。
-### 二、社会适应性分析
+ifneq ($(boot), none)
+ifneq ($(app),0)
+    ifneq ($(findstring $(size_map),  6  8  9),)
+      LD_FILE = $(LDDIR)/eagle.app.v6.$(boot).2048.ld
+    else
+      ifeq ($(size_map), 5)
+        LD_FILE = $(LDDIR)/eagle.app.v6.$(boot).2048.ld
+      else
+        ifeq ($(size_map), 4)
+          LD_FILE = $(LDDIR)/eagle.app.v6.$(boot).1024.app$(app).ld
+        else
+          ifeq ($(size_map), 3)
+            LD_FILE = $(LDDIR)/eagle.app.v6.$(boot).1024.app$(app).ld
+          else
+            ifeq ($(size_map), 2)
+              LD_FILE = $(LDDIR)/eagle.app.v6.$(boot).1024.app$(app).ld
+            else
+              ifeq ($(size_map), 0)
+                LD_FILE = $(LDDIR)/eagle.app.v6.$(boot).512.app$(app).ld
+              endif
+            endif
+          endif
+        endif
+      endif
+    endif
+    BIN_NAME = user$(app).$(flash).$(boot).$(size_map)
+endif
+else
+    app = 0
+endif
 
-a.分析预测项目直接相关的不同直接利益相关者对项目建设和运营的态度及参与程度:态度积极、参与度高
+CSRCS ?= $(wildcard *.c)
+CPPSRCS ?= $(wildcard *.cpp)
+ASRCs ?= $(wildcard *.s)
+ASRCS ?= $(wildcard *.S)
+SUBDIRS ?= $(patsubst %/,%,$(dir $(wildcard */Makefile)))
 
-b.分析预测项目所在地各类组织对项目建设和运营的态度：态度积极、参与度高
+ODIR := .output
+OBJODIR := $(ODIR)/$(TARGET)/$(FLAVOR)/obj
 
-c.分析预测项目所在地现有社会环境、人文条件能否适应项目建设和发展需要：适合
+OBJS := $(CSRCS:%.c=$(OBJODIR)/%.o) \
+        $(CPPSRCS:%.cpp=$(OBJODIR)/%.o) \
+        $(ASRCs:%.s=$(OBJODIR)/%.o) \
+        $(ASRCS:%.S=$(OBJODIR)/%.o)
 
+DEPS := $(CSRCS:%.c=$(OBJODIR)/%.d) \
+        $(CPPSRCS:%.cpp=$(OBJODIR)/%.d) \
+        $(ASRCs:%.s=$(OBJODIR)/%.d) \
+        $(ASRCS:%.S=$(OBJODIR)/%.d)
 
-### 三、社会风险及应对策略
-  在社会影响效果分析和社会适应性分析基础上，在社会影响效果分析和社会适应性分析基础上，针对项目的不利影响，是否会遭到反对，进而针对项目的不利影响，是否会遭到反对，进而引发社会矛盾，提出征地拆迁、移民安置、补引发社会矛盾，提出征地拆迁、移民安置、补偿标准、环境保护等方案可能存在或应注意的偿标准、环境保护等方案可能存在或应注意的问题以及可能出现的社会风险因素。问题以及可能出现的社会风险因素.针对可能出现的重要风险因素，提出规避风险针对可能出现的重要风险因素，提出规避风险的对策措施。
+LIBODIR := $(ODIR)/$(TARGET)/$(FLAVOR)/lib
+OLIBS := $(GEN_LIBS:%=$(LIBODIR)/%)
+
+IMAGEODIR := $(ODIR)/$(TARGET)/$(FLAVOR)/image
+OIMAGES := $(GEN_IMAGES:%=$(IMAGEODIR)/%)
+
+BINODIR := $(ODIR)/$(TARGET)/$(FLAVOR)/bin
+OBINS := $(GEN_BINS:%=$(BINODIR)/%)
+
+CCFLAGS += 			\
+	-g			\
+	-Wpointer-arith		\
+	-Wundef			\
+	-Werror			\
+	-Wl,-EL			\
+	-fno-inline-functions	\
+	-nostdlib       \
+	-mlongcalls	\
+	-mtext-section-literals \
+	-ffunction-sections \
+	-fdata-sections	\
+	-fno-builtin-printf	\
+	-fno-jump-tables
+#	-Wall			
+
+CFLAGS = $(CCFLAGS) $(DEFINES) $(EXTRA_CCFLAGS) $(INCLUDES)
+DFLAGS = $(CCFLAGS) $(DDEFINES) $(EXTRA_CCFLAGS) $(INCLUDES)
+
+define ShortcutRule
+$(1): .subdirs $(2)/$(1)
+endef
+
+define MakeLibrary
+DEP_LIBS_$(1) = $$(foreach lib,$$(filter %.a,$$(COMPONENTS_$(1))),$$(dir $$(lib))$$(LIBODIR)/$$(notdir $$(lib)))
+DEP_OBJS_$(1) = $$(foreach obj,$$(filter %.o,$$(COMPONENTS_$(1))),$$(dir $$(obj))$$(OBJODIR)/$$(notdir $$(obj)))
+$$(LIBODIR)/$(1).a: $$(OBJS) $$(DEP_OBJS_$(1)) $$(DEP_LIBS_$(1)) $$(DEPENDS_$(1))
+	@mkdir -p $$(LIBODIR)
+	$$(if $$(filter %.a,$$?),mkdir -p $$(EXTRACT_DIR)_$(1))
+	$$(if $$(filter %.a,$$?),cd $$(EXTRACT_DIR)_$(1); $$(foreach lib,$$(filter %.a,$$?),$$(AR) xo $$(UP_EXTRACT_DIR)/$$(lib);))
+	$$(AR) ru $$@ $$(filter %.o,$$?) $$(if $$(filter %.a,$$?),$$(EXTRACT_DIR)_$(1)/*.o)
+	$$(if $$(filter %.a,$$?),$$(RM) -r $$(EXTRACT_DIR)_$(1))
+endef
+
+define MakeImage
+DEP_LIBS_$(1) = $$(foreach lib,$$(filter %.a,$$(COMPONENTS_$(1))),$$(dir $$(lib))$$(LIBODIR)/$$(notdir $$(lib)))
+DEP_OBJS_$(1) = $$(foreach obj,$$(filter %.o,$$(COMPONENTS_$(1))),$$(dir $$(obj))$$(OBJODIR)/$$(notdir $$(obj)))
+$$(IMAGEODIR)/$(1).out: $$(OBJS) $$(DEP_OBJS_$(1)) $$(DEP_LIBS_$(1)) $$(DEPENDS_$(1))
+	@mkdir -p $$(IMAGEODIR)
+	$$(CC) $$(LDFLAGS) $$(if $$(LINKFLAGS_$(1)),$$(LINKFLAGS_$(1)),$$(LINKFLAGS_DEFAULT) $$(OBJS) $$(DEP_OBJS_$(1)) $$(DEP_LIBS_$(1))) -o $$@ 
+endef
+
+$(BINODIR)/%.bin: $(IMAGEODIR)/%.out
+	@mkdir -p $(BIN_PATH)
+	@mkdir -p $(BINODIR)
+	
+ifeq ($(APP), 0)
+	@$(RM) -r $(BIN_PATH)/eagle.S $(BIN_PATH)/eagle.dump
+	@$(OBJDUMP) -x -s $< > $(BIN_PATH)/eagle.dump
+	@$(OBJDUMP) -S $< > $(BIN_PATH)/eagle.S
+else
+	@mkdir -p $(BIN_PATH)/upgrade
+	@$(RM) -r $(BIN_PATH)/upgrade/$(BIN_NAME).S $(BIN_PATH)/upgrade/$(BIN_NAME).dump
+	@$(OBJDUMP) -x -s $< > $(BIN_PATH)/upgrade/$(BIN_NAME).dump
+	@$(OBJDUMP) -S $< > $(BIN_PATH)/upgrade/$(BIN_NAME).S
+endif
+
+	@$(OBJCOPY) --only-section .text -O binary $< eagle.app.v6.text.bin
+	@$(OBJCOPY) --only-section .data -O binary $< eagle.app.v6.data.bin
+	@$(OBJCOPY) --only-section .rodata -O binary $< eagle.app.v6.rodata.bin
+	@$(OBJCOPY) --only-section .irom0.text -O binary $< eagle.app.v6.irom0text.bin
+
+	@echo ""
+	@echo "!!!"
+	@echo "SDK_PATH: $(SDK_PATH)"
+	
+ifeq ($(app), 0)
+	@python $(SDK_PATH)/tools/gen_appbin.py $< 0 $(mode) $(freqdiv) $(size_map)
+	@mv eagle.app.flash.bin $(BIN_PATH)/eagle.flash.bin
+	@mv eagle.app.v6.irom0text.bin $(BIN_PATH)/eagle.irom0text.bin
+	@rm eagle.app.v6.*
+	@echo "BIN_PATH: $(BIN_PATH)"
+	@echo ""
+	@echo "No boot needed."
+	@echo "Generate eagle.flash.bin and eagle.irom0text.bin successully in BIN_PATH"
+	@echo "eagle.flash.bin-------->0x00000"
+	@echo "eagle.irom0text.bin---->0x20000"
+else
+	@echo "BIN_PATH: $(BIN_PATH)/upgrade"
+	@echo ""
+
+    ifneq ($(boot), new)
+		@python $(SDK_PATH)/tools/gen_appbin.py $< 1 $(mode) $(freqdiv) $(size_map)
+		@echo "Support boot_v1.1 and +"
+    else
+		@python $(SDK_PATH)/tools/gen_appbin.py $< 2 $(mode) $(freqdiv) $(size_map)
+
+    	ifeq ($(size_map), 6)
+		@echo "Support boot_v1.4 and +"
+        else
+            ifeq ($(size_map), 5)
+		@echo "Support boot_v1.4 and +"
+            else
+		@echo "Support boot_v1.2 and +"
+            endif
+        endif
+    endif
+
+	@mv eagle.app.flash.bin $(BIN_PATH)/upgrade/$(BIN_NAME).bin
+	@rm eagle.app.v6.*
+	@echo "Generate $(BIN_NAME).bin successully in BIN_PATH"
+	@echo "boot.bin------------>0x00000"
+	@echo "$(BIN_NAME).bin--->$(addr)"
+endif
+
+	@echo "!!!"
+
+all:	.subdirs $(OBJS) $(OLIBS) $(OIMAGES) $(OBINS) $(SPECIAL_MKTARGETS)
+
+clean:
+	$(foreach d, $(SUBDIRS), $(MAKE) -C $(d) clean;)
+	$(RM) -r $(ODIR)/$(TARGET)/$(FLAVOR)
+
+clobber: $(SPECIAL_CLOBBER)
+	$(foreach d, $(SUBDIRS), $(MAKE) -C $(d) clobber;)
+	$(RM) -r $(ODIR)
+
+.subdirs:
+	@set -e; $(foreach d, $(SUBDIRS), $(MAKE) -C $(d);)
+
+#.subdirs:
+#	$(foreach d, $(SUBDIRS), $(MAKE) -C $(d))
+
+ifneq ($(MAKECMDGOALS),clean)
+ifneq ($(MAKECMDGOALS),clobber)
+ifdef DEPS
+sinclude $(DEPS)
+endif
+endif
+endif
+
+$(OBJODIR)/%.o: %.c
+	@mkdir -p $(OBJODIR);
+	$(CC) $(if $(findstring $<,$(DSRCS)),$(DFLAGS),$(CFLAGS)) $(COPTS_$(*F)) -o $@ -c $<
+
+$(OBJODIR)/%.d: %.c
+	@mkdir -p $(OBJODIR);
+	@echo DEPEND: $(CC) -M $(CFLAGS) $<
+	@set -e; rm -f $@; \
+	$(CC) -M $(CFLAGS) $< > $@.$$$$; \
+	sed 's,\($*\.o\)[ :]*,$(OBJODIR)/\1 $@ : ,g' < $@.$$$$ > $@; \
+	rm -f $@.$$$$
+	
+$(OBJODIR)/%.o: %.cpp
+	@mkdir -p $(OBJODIR);
+	$(CPP) $(if $(findstring $<,$(DSRCS)),$(DFLAGS),$(CFLAGS)) $(COPTS_$(*F)) -o $@ -c $<
+
+$(OBJODIR)/%.d: %.cpp
+	@mkdir -p $(OBJODIR);
+	@echo DEPEND: $(CPP) -M $(CFLAGS) $<
+	@set -e; rm -f $@; \
+	$(CPP) -M $(CFLAGS) $< > $@.$$$$; \
+	sed 's,\($*\.o\)[ :]*,$(OBJODIR)/\1 $@ : ,g' < $@.$$$$ > $@; \
+	rm -f $@.$$$$
+
+$(OBJODIR)/%.o: %.s
+	@mkdir -p $(OBJODIR);
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+$(OBJODIR)/%.d: %.s
+	@mkdir -p $(OBJODIR); \
+	set -e; rm -f $@; \
+	$(CC) -M $(CFLAGS) $< > $@.$$$$; \
+	sed 's,\($*\.o\)[ :]*,$(OBJODIR)/\1 $@ : ,g' < $@.$$$$ > $@; \
+	rm -f $@.$$$$
+
+$(OBJODIR)/%.o: %.S
+	@mkdir -p $(OBJODIR);
+	$(CC) $(CFLAGS) -D__ASSEMBLER__ -o $@ -c $<
+
+$(OBJODIR)/%.d: %.S
+	@mkdir -p $(OBJODIR); \
+	set -e; rm -f $@; \
+	$(CC) -M $(CFLAGS) $< > $@.$$$$; \
+	sed 's,\($*\.o\)[ :]*,$(OBJODIR)/\1 $@ : ,g' < $@.$$$$ > $@; \
+	rm -f $@.$$$$
+
+$(foreach lib,$(GEN_LIBS),$(eval $(call ShortcutRule,$(lib),$(LIBODIR))))
+
+$(foreach image,$(GEN_IMAGES),$(eval $(call ShortcutRule,$(image),$(IMAGEODIR))))
+
+$(foreach bin,$(GEN_BINS),$(eval $(call ShortcutRule,$(bin),$(BINODIR))))
+
+$(foreach lib,$(GEN_LIBS),$(eval $(call MakeLibrary,$(basename $(lib)))))
+
+$(foreach image,$(GEN_IMAGES),$(eval $(call MakeImage,$(basename $(image)))))
+
+INCLUDES := $(INCLUDES) -I $(SDK_PATH)/include -I $(SDK_PATH)/extra_include
+PDIR := ../$(PDIR)
+INCLUDES += -I $(SDK_PATH)/driver_lib/include
+INCLUDES += -I $(SDK_PATH)/include/espressif
+INCLUDES += -I $(SDK_PATH)/include/lwip
+INCLUDES += -I $(SDK_PATH)/include/lwip/ipv4
+INCLUDES += -I $(SDK_PATH)/include/lwip/ipv6
+INCLUDES += -I $(SDK_PATH)/include/nopoll
+INCLUDES += -I $(SDK_PATH)/include/spiffs
+INCLUDES += -I $(SDK_PATH)/include/ssl
+INCLUDES += -I $(SDK_PATH)/include/json
+INCLUDES += -I $(SDK_PATH)/include/openssl
+
 
 ## 学习收获
-
-
 在工程概论这门课上，我们的课程主要以中期为分界线分为前后两个部分，前半期我们通过分组翻译《Exploring Engineering》这本书学习了在一个工程中作为一个工程师的角色需要了解的各个方面，从理论到实践，以及涉及到的各个领域的专业知识。
-作为一名工程师，不仅需要强大的理论知识，还需要极强的实践精神和动手能力，前者就需要靠平时上课的日积月累，后者在这门课程的后半部分小有实践。第一次的实践中，我们通过节点和网关的通信，实现了将节点测得的温度数据进行传输，在首次实践中，我们学习到了焊接的技术和了解节点和网关的通信原理，在焊接中更多的考验的是耐心和细心。第二次的实践中，我们需要在户外旅行、智慧农业等几个主题中进行选择，经过小组讨论，基于我们的认知，选择了智慧农业。头脑风暴、集思广益，结合实际应用，考虑到中国南方多种水稻，小组确定做一个检测水稻水位的预警系统。根据材料设计图纸，完成前期工作。我们先从包装做起，由于是水下工作，考虑防水性问题，我们需要做一个完全封闭的密闭盒子，采用激光切割裁出一个长宽高都约为8厘米的盒子，用双面胶粘起来即可。拿到老师下发的材料后，我们发现材料并不防水，无法在水下工作，面临这个难题，我们只得自行在网上购买防水材料的传感器，经过焊接组装初步得到了我们想要的产品，实现初步设计！接下来是调试阶段，将传感器插入水下，功能基本实现，但是会出现一些警报灯不灵的现象，通过更换led灯和重新焊接等方法调试，功能基本稳定。
+作为一名工程师，不仅需要强大的理论知识，还需要极强的实践精神和动手能力，前者就需要靠平时上课的日积月累，后者在这门课程的后半部分小有实践。第一次的实践中，我们通过节点和网关的通信，实现了将节点测得的温度数据进行传输，在首次实践中，我们学习到了焊接的技术和了解节点和网关的通信原理，在焊接中更多的考验的是耐心和细心。第二次的实践中，我们需要在户外旅行、智慧农业等几个主题中进行选择，经过小组讨论，基于我们的认知，选择了户外旅行。
 从头脑风暴、视频剪辑到设计制作，离不开小组的密切合作，组长发挥统筹作用，结合每个组员的特长，合理分配任务，按时推进进度，保证最后顺利完成。完整的小组作业离不开密切的小组合作！
 “纸上得来终觉浅，绝知此事要躬行。”在短暂的实践过程中，我们深深的感觉到自己所学知识的肤浅和在实际运用中的专业知识的匮乏，刚开始的一段时间里，感到无从下手，茫然不知所措。在学校总以为自己学的不错，一旦接触到实际，才发现自己知道的是多么少，这时才真正领悟到“学无止境”的含义!
 
-## 设计需求：
-
-压强传感器*2
-
-温湿度传感器*2
-
-通信模块
-
-杜邦线
-
-
+## 团建计划
+分头从网上或实体店购买开发板和传感器。
+分别设计编写各模块所需要的程序。
+选择时间将各模块组装成产品雏形。
+美化产品外观，完成产品设计。
