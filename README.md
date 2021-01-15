@@ -41,12 +41,29 @@ ESP-F模块以最低成本提供最大实用性，为Wi-Fi功能嵌入其他系�
 
 | 分类 | 项目 | 参数 |
 | ------ | ------ | ------ | 
-| WIFI | 频率范围 | 2.4G-2.5G(2400M-2483.5M) |
-| ------ | ------ | ------ | 
-| WIFI | 频率范围 | 2.4G-2.5G(2400M-2483.5M) |
-| WIFI | 频率范围 | 2.4G-2.5G(2400M-2483.5M) |
-| WIFI | 频率范围 | 2.4G-2.5G(2400M-2483.5M) |
-| WIFI | 频率范围 | 2.4G-2.5G(2400M-2483.5M) |
+| WIFI | 频率范围 | 2.4G - 2.5G(2400M - 2483.5M) |
+| WIFI | 发射功率 | 802.11b: +20 dBm |
+| WIFI | 发射功率 | 802.11g: +17 dBm |
+| WIFI | 发射功率 | 802.11n: +14 dBm |
+| WIFI | 接收灵敏度 | 802.11b: -91 dbm (11Mbps) |
+| WIFI | 接收灵敏度 | 802.11g: -75 dbm (54Mbps) |
+| WIFI | 接收灵敏度 | 802.11n: -72 dbm (MCS7) |
+| WIFI | 天线 | PCB板载天线 |
+| 硬件 | CPU | Tensilica L106 32 bit微控制器 |
+| 硬件 | 外设 | UART/SDIO/SPI/I2C/I2S/IR遥控 |
+| 硬件 | 外设 | GPIO/ADC/PWM/SPI/I2C/I2S |
+| 硬件 | 工作电压 | 2.5V - 3.6V |
+| 硬件 | 工作电流 | 平均电流：80 mA |
+| 硬件 | 工作温度 | -40°C - 85°C |
+| 硬件 | 环境温度范围 | -40°C - 125°C |
+| 硬件 | 封装大小 | 16mm x 24mm x 3mm |
+| 软件 | Wi-Fi 模式 | Station/SoftAP/SoftAP+Station |
+| 软件 | 安全机制 | WPA/WPA2 |
+| 软件 | 加密类型 | WEP/TKIP/AES |
+| 软件 | 升级固件 | UART Download/OTA (通过网络) |
+| 软件 | 软件开发 | Non-RTOS/RTOS/Arduino IDE等 |
+| 软件 | 网络协议 | IPv4、TCP/UDP/HTTP/FTP/MQTT |
+| 软件 | 用户配置 | AT+ 指令集/云端服务器/ Android/iOS APP |
 
 ## 性能评估
 目前能顺利地实现所有功能，能正常地显示温度、湿度、日期与时间，满足设计的需求。
